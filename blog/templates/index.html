@@ -1,25 +1,12 @@
-{% load static  %}
-<link rel ="stylesheet" type="text/css" href="{%  static 'css/style.css' %}" />
+{%  extends 'base.html' %}
 
-{% load bootstrap3 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
+{%  block content %}
+    <h1>This is an index page.</h1>
+    {%  for post in posts %}
+    <div>
+        <h3><a href=/post/{{ post.slug }}>{{  post.title }}</a></h3>
+        <p>{{  post.summary }}</p>
+    </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Python Django</title>
-</head>
-<body>
-<h1>I'm an Index Page</h1>
-
-{%  for post in posts %}
-<div>
-    <h3><a href=/post/{{ post.slug }}>{{  post.title }}</a></h3>
-    <p>{{  post.summary }}</p>
-</div>
-
-{%  endfor %}
-</body>
-</html>
+    {%  endfor %}
+{%  endblock %}

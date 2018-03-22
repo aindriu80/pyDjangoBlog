@@ -1,5 +1,10 @@
-<a href="/"><- back to index</a><br/><br/>
-<h2>{{  post.title }}</h2>
-<div>
-    {{ post.content }}
-</div>
+{%  extends 'base.html' %}
+
+{%  block title %}Python Django:{{ post.title}}{% endblock %}
+
+{%  block content %}
+    <h2>{{  post.title }}</h2>
+    <div>
+        {{ post.content }}
+    </div>
+{% endblock %}
